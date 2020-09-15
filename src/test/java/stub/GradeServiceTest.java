@@ -1,5 +1,5 @@
 package stub;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +10,9 @@ public class GradeServiceTest {
 
     @Test
     public void shouldReturn90WhenCalculateStudentAverageGradeAndGradeIs80And90And100() {
-        //Assertions.assertEquals(90.0, result);
+        StubGradeService stubGradeService = new StubGradeService();
+        GradeService gradeService = new GradeService(stubGradeService);
+        double result = gradeService.calculateAverageGrades(123L);
+        assertEquals(10.0, result);
     }
 }
