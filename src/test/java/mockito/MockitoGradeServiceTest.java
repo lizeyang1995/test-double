@@ -19,7 +19,7 @@ public class MockitoGradeServiceTest {
     public void shouldUseMockito() {
         GradeSystem stubGradeSystem = Mockito.mock(GradeSystem.class);
         gradeService = new GradeService(stubGradeSystem);
-        when(stubGradeSystem.gradesFor(123L)).thenReturn(Collections.singletonList(90.0));
-        Assertions.assertEquals(90, gradeService.calculateAverageGrades(123L));
+        when(stubGradeSystem.gradesFor(123L)).thenReturn(Arrays.asList(90.0, 90.0, 90.0));
+        Assertions.assertEquals(90.0, gradeService.calculateAverageGrades(123L));
     }
 }

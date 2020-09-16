@@ -14,6 +14,6 @@ public class MockitoSecurityCenterTest {
         DoorPanel mockDoorPanel = Mockito.mock(DoorPanel.class);
         securityCenter = new SecurityCenter(mockDoorPanel);
         securityCenter.switchOn();
-        Mockito.verify(mockDoorPanel, Mockito.times(1));
+        Mockito.verify(mockDoorPanel).close();
     }
 }
